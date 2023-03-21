@@ -1,0 +1,43 @@
+.flexCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flexCol figure {
+  margin: 0;
+  display: grid;
+  max-width: 400px;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+.flexCol figure * {
+  grid-area: 1/1;
+  transition: 0.5s;
+}
+.flexCol figure img {
+  width: 100%;
+  aspect-ratio: 2/3;
+}
+.flexCol figure figcaption {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  padding: 0.75rem;
+  background-color: rgba(34, 40, 49, 0.5215686275);
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  -webkit-clip-path: inset(0 var(--i, 100%) 0 0);
+          clip-path: inset(0 var(--i, 100%) 0 0);
+}
+.flexCol figure figcaption p {
+  margin: 0;
+}
+.flexCol figure:hover figcaption {
+  --i:0%;
+}
+.flexCol figure:hover img {
+  transform: scale(1.2);
+}/*# sourceMappingURL=movieCard.css.map */
