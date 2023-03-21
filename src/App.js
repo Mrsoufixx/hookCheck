@@ -3,6 +3,7 @@ import Filter from "./components/Filter";
 import MovieList from "./components/MovieList";
 import Movies from "./components/Movies";
 import "./App.css";
+import NavBar from "./components/layouts/NavBar";
 
 function App() {
   const [movies, setMovies] = useState(Movies);
@@ -40,18 +41,21 @@ function App() {
   }
 
   return (
-    <div className="container">
-      <h1>My Movie App</h1>
-      <button onClick={() => setShowInputForm(true)}>Add Movie</button>
-      {showInputForm && <MovieInput onAddMovie={AddMovie} />}
-      <Filter
-        titleFilter={titleFilter}
-        ratingFilter={ratingFilter}
-        onTitleFilterChange={handleTitleFilterChange}
-        onRatingFilterChange={handleRatingFilterChange}
-      />
-      <MovieList movies={filteredMovies} />
-    </div>
+    <>
+      <NavBar />
+      <div className="container">
+        <h1>My Movie App</h1>
+        <button onClick={() => setShowInputForm(true)}>Add Movie</button>
+        {showInputForm && <MovieInput onAddMovie={AddMovie} />}
+        <Filter
+          titleFilter={titleFilter}
+          ratingFilter={ratingFilter}
+          onTitleFilterChange={handleTitleFilterChange}
+          onRatingFilterChange={handleRatingFilterChange}
+        />
+        <MovieList movies={filteredMovies} />
+      </div>
+    </>
   );
 }
 
@@ -80,8 +84,8 @@ function MovieInput({ onAddMovie }) {
         <textarea
           type="text"
           value={description}
-          onChange={(e) => setDescription(e.target.value)}>
-        </textarea>
+          onChange={(e) => setDescription(e.target.value)}
+        ></textarea>
       </label>
       <label>
         Poster URL:

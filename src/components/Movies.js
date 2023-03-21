@@ -1,4 +1,4 @@
-import godfather from "./assets/godFather.jpg"
+import godfather from "./assets/godFather.jpeg"
 import schindlerList from "./assets/schindlerList.jpeg"
 import goodFellas from "./assets/goodFellas.jpg"
 import theShawshankRedemption from "./assets/theShawshankRedemption.jpg"

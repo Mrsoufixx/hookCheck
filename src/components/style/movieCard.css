@@ -14,7 +14,6 @@
 }
 .flexCol figure * {
   grid-area: 1/1;
-  transition: 0.5s;
 }
 .flexCol figure img {
   width: 100%;
@@ -31,13 +30,30 @@
           backdrop-filter: blur(1px);
   -webkit-clip-path: inset(0 var(--i, 100%) 0 0);
           clip-path: inset(0 var(--i, 100%) 0 0);
+  transition: 0.5s;
 }
 .flexCol figure figcaption p {
+  font-size: 25px;
+  text-shadow: 1px 1px 2px black;
   margin: 0;
+  transition: 0.5s;
+}
+.flexCol figure figcaption .playIcon {
+  justify-self: center;
+  align-self: center;
+  color: #00ADB5;
+  font-size: 50px;
+  transition: none;
+  text-shadow: 1px 1px 2px black;
+  transition: 0.2s;
+}
+.flexCol figure figcaption .playIcon:hover {
+  color: #005f64;
 }
 .flexCol figure:hover figcaption {
   --i:0%;
 }
 .flexCol figure:hover img {
+  transition: 0.5s;
   transform: scale(1.2);
 }/*# sourceMappingURL=movieCard.css.map */

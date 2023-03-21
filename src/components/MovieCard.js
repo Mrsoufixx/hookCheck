@@ -2,6 +2,7 @@ import React from "react";
 import "./style/movieCard.css";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { FaPlay } from "react-icons/fa";
 
 function MovieCard({ movie }) {
   return (
@@ -37,6 +38,7 @@ function MovieCard({ movie }) {
             />
             
           </div>
+          <div className="playIcon"><FaPlay/></div>
           <p>{movie.description}</p>
         </figcaption>
       </figure>
