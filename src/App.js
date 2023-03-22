@@ -4,6 +4,7 @@ import MovieList from "./components/MovieList";
 import Movies from "./components/Movies";
 import "./App.css";
 import NavBar from "./components/layouts/NavBar";
+import {TbSquareRoundedPlus} from "react-icons/tb"
 
 function App() {
   const [movies, setMovies] = useState(Movies);
@@ -43,10 +44,10 @@ function App() {
   return (
     <>
       <NavBar />
-      <div className="container">
-        <h1>My Movie App</h1>
-        <button onClick={() => setShowInputForm(true)}>Add Movie</button>
-        {showInputForm && <MovieInput onAddMovie={AddMovie} />}
+      <div className="container marginLR">
+        <h1>Découvrer les meilleurs films sur SoukFilm</h1>
+        <button onClick={() => setShowInputForm(true)} className="addBtn"><TbSquareRoundedPlus/></button>
+        {showInputForm && <MovieInput onAddMovie={AddMovie}/>}
         <Filter
           titleFilter={titleFilter}
           ratingFilter={ratingFilter}
@@ -68,42 +69,45 @@ function MovieInput({ onAddMovie }) {
   function handleSubmit(e) {
     e.preventDefault();
     onAddMovie(title, description, posterURL, rating);
+   
   }
   return (
     <form onSubmit={handleSubmit}>
       <label>
         Title:
+        </label>
         <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-      </label>
+      
       <label>
         Description:
+        </label>
         <textarea
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
-      </label>
       <label>
         Poster URL:
+        </label>
         <input
           type="text"
           value={posterURL}
           onChange={(e) => setPosterURL(e.target.value)}
         />
-      </label>
       <label>
         Rating:
+        </label>
         <input
           type="number"
           value={rating}
           onChange={(e) => setRating(e.target.value)}
         />
-      </label>
       <button type="submit">Add Movie</button>
+    
     </form>
   );
 }

@@ -1,63 +1,68 @@
-.flexCol{
+.flexCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #393E46;
+  border-radius: 16px;
+  padding: 20px;
+  h2 {
+    font-weight: 300;
+    font-size: 40px;
+    white-space: normal;
+    letter-spacing: 2px;
+  }
+  figure {
+    margin: 0;
+    display: grid;
+    max-width: 400px;
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    * {
+      grid-area: 1/1;
+    }
+    img {
+      width: 100%;
+      aspect-ratio: 2/3;
+    }
+    figcaption {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      figure{
-            margin: 0;
-            display: grid;
-            max-width: 400px;
-            border-radius: 1rem;
-            overflow: hidden;
-            cursor: pointer;
-            *{
-                  grid-area: 1/1;
-                  
-                  
-            }
-            img{
-                  width: 100%;
-                  aspect-ratio: 2/3;
-            }
-            figcaption{
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: space-between;
-                  align-items: end;
-                  padding: .75rem;
-                  background-color: #22283185;
-                  backdrop-filter: blur(1px);
-                  clip-path: inset(0 var(--i,100%) 0 0);
-                  transition: .5s;
-                 p{
-                  // color: #fcfcfc;
-                  font-size: 25px;
-                  text-shadow: 1px 1px 2px black;
-                  margin:0;
-                  transition: .5s;
-                 }
-                 .playIcon{
-                  justify-self: center;
-                  align-self: center;
-                  color: #00ADB5;
-                  font-size: 50px;
-                  transition: none;
-                  text-shadow: 1px 1px 2px black;
-                  transition: .2s;
-                  &:hover{
-                        color: #005f64;
-                  }
-                 }
-                 
-                 
-            }
-            
-            &:hover figcaption{
-                  --i:0%;
-            }
-            &:hover img{
-                  transition: .5s;
-                  transform: scale(1.2);
-            }
+      justify-content: space-between;
+      align-items: end;
+      padding: 0.75rem;
+      background-color: #22283185;
+      backdrop-filter: blur(1px);
+      clip-path: inset(0 var(--i, 100%) 0 0);
+      transition: 0.5s;
+      p {
+        // color: #fcfcfc;
+        font-size: 25px;
+        text-shadow: 1px 1px 2px black;
+        margin: 0;
+        transition: 0.5s;
       }
+      .playIcon {
+        justify-self: center;
+        align-self: center;
+        color: #00adb5;
+        font-size: 50px;
+        transition: none;
+        text-shadow: 1px 1px 2px black;
+        transition: 0.2s;
+        &:hover {
+          color: #005f64;
+        }
+      }
+    }
+
+    &:hover figcaption {
+      --i: 0%;
+    }
+    &:hover img {
+      transition: 0.5s;
+      transform: scale(1.2);
+    }
+  }
 }

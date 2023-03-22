@@ -1,0 +1,23 @@
+.filter{
+    margin: 5px 0 20px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+    h2{
+
+    }
+    label{
+
+    }
+    input{
+        height: 30px;
+        width: 15%;
+        border-radius: 10px;
+    }
+    select{
+        height: 30px;
+        border-radius: 10px;
+        width: 8%;
+    }
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import {BiCameraMovie} from "react-icons/bi"
+import {RiMenu3Fill} from "react-icons/ri"
 import "./style/NavBar.css"
 import { useState } from 'react'
 
@@ -15,20 +16,20 @@ const NavBar = () => {
   
     return (
       <nav className="navbar">
-        <div className="subNavbar">
+        <div className="subNavbar marginLR">
           <div className="logo">
-          {BiCameraMovie}
+            <BiCameraMovie/>
           </div>
           <div className="menu-icon" onClick={handleShowNavbar}>
-          hum
+          <RiMenu3Fill/>
           </div>
-          <div className={`nav-elements  ${showNavbar && 'active'}`}>
+          <div className={`nav-elements  ${showNavbar && 'active'} `}>
             <ul>
-              <li>
+              <li className='pullDown'>
                 <a href='/'>Home</a>
               </li>
               <li>
-              <a href='/'>Home</a>
+              <a href='/'>Categories</a>
               </li>
             </ul>
           </div>

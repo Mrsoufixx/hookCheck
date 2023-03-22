@@ -1,84 +1,98 @@
-.subNavbar {
-  max-width: 1100px;
-  margin: 0 auto;
+.navbar {
+  height: 60px;
+  background-color: #00adb5;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  position: sticky;
+  margin: 0;
+  /* Pull down  */
+}
+.navbar .subNavbar {
   padding: 0 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
 }
-
-.navbar {
-  height: 60px;
-  background-color: #fef7e5;
-  position: relative;
+.navbar .subNavbar .logo {
+  color: #222831;
+  font-size: 50px;
 }
-
-.menu-icon {
-  display: none;
-}
-
-.nav-elements ul {
+.navbar .subNavbar .nav-elements ul {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
 }
-
-.nav-elements ul li:not(:last-child) {
+.navbar .subNavbar .nav-elements ul li:not(:last-child) {
   margin-right: 60px;
+  width: 20%;
 }
-
-.nav-elements ul a {
-  font-size: 16px;
+.navbar .subNavbar .nav-elements ul a {
+  font-size: 25px;
   font-weight: 400;
-  color: #2f234f;
+  color: #222831;
   text-decoration: none;
 }
-
-.nav-elements ul a.active {
-  color: #574c4c;
+.navbar .subNavbar .nav-elements ul a.active {
+  color: #222831;
   font-weight: 500;
   position: relative;
 }
-
-.nav-elements ul a.active::after {
+.navbar .subNavbar .nav-elements ul a.active::after {
   content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #574c4c;
 }
-
+.navbar .menu-icon {
+  display: none;
+}
+.navbar li.pullDown a:before {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0px;
+  top: 0px;
+  content: "";
+  background: #FFF;
+  opacity: 0.3;
+  transition: all 0.3s;
+}
+.navbar li.pullDown a:hover:before {
+  height: 100%;
+}
 @media (max-width: 768px) {
-  .nav-elements ul li:not(:last-child) {
+  .navbar .nav-elements ul li:not(:last-child) {
     margin-right: 30px;
   }
 }
-@media (max-width: 600px) {
-  .menu-icon {
+@media only screen and (max-width: 56.25em) {
+  .navbar .menu-icon {
+    color: #222831;
     display: block;
     cursor: pointer;
+    font-size: 30px;
   }
-  .nav-elements {
+  .navbar .nav-elements {
     position: absolute;
     right: 0;
     top: 60px;
-    background-color: #fef7e5;
+    background-color: #00adb5;
     width: 0px;
     height: calc(100vh - 60px);
     transition: all 0.3s ease-in;
     overflow: hidden;
   }
-  .nav-elements.active {
+  .navbar .nav-elements.active {
     width: 270px;
   }
-  .nav-elements ul {
+  .navbar .nav-elements ul {
     display: flex;
     flex-direction: column;
   }
-  .nav-elements ul li {
+  .navbar .nav-elements ul li {
     margin-right: unset;
     margin-top: 22px;
   }

@@ -1,0 +1,17 @@
+.filter {
+  margin: 5px 0 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+.filter input {
+  height: 30px;
+  width: 15%;
+  border-radius: 10px;
+}
+.filter select {
+  height: 30px;
+  border-radius: 10px;
+  width: 8%;
+}/*# sourceMappingURL=filter.css.map */
