@@ -5,7 +5,6 @@
           backdrop-filter: blur(5px);
   position: sticky;
   margin: 0;
-  /* Pull down  */
 }
 .navbar .subNavbar {
   padding: 0 15px;
@@ -48,20 +47,6 @@
 }
 .navbar .menu-icon {
   display: none;
-}
-.navbar li.pullDown a:before {
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  left: 0px;
-  top: 0px;
-  content: "";
-  background: #FFF;
-  opacity: 0.3;
-  transition: all 0.3s;
-}
-.navbar li.pullDown a:hover:before {
-  height: 100%;
 }
 @media (max-width: 768px) {
   .navbar .nav-elements ul li:not(:last-child) {

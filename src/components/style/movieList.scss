@@ -1,7 +1,7 @@
 @import "./mixin";
 .grid-4{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(285px, 1fr));
     gap: 20px;
     place-items: start center;
     width: 100%;

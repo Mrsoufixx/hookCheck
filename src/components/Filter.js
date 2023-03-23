@@ -1,18 +1,31 @@
-import React from 'react';
-import  "./style/filter.css"
+import React from "react";
+import "./style/filter.css";
 
-function Filter({ titleFilter, ratingFilter, onTitleFilterChange, onRatingFilterChange }) {
+function Filter({
+  titleFilter,
+  ratingFilter,
+  onTitleFilterChange,
+  onRatingFilterChange,
+}) {
   return (
-    <div className='filter'>
+    <div className="filter">
       <h2>Filter</h2>
-      <label htmlFor="title-filter">By title:</label>
-      <input
-        id="title-filter"
-        type="text"
-        value={titleFilter}
-        onChange={(e) => onTitleFilterChange(e.target.value)}
-      />
-      <br />
+
+      <div class="form__group field">
+        <input
+          type="text"
+          value={titleFilter}
+          class="form__field"
+          placeholder="Title"
+          name="title"
+          onChange={(e) => onTitleFilterChange(e.target.value)}
+          id="title-filter"
+          required
+        />
+        <label htmlFor="title-filter" class="form__label">
+          Title
+        </label>
+      </div>
       <label htmlFor="rating-filter">By rating:</label>
       <select
         id="rating-filter"
@@ -30,7 +43,6 @@ function Filter({ titleFilter, ratingFilter, onTitleFilterChange, onRatingFilter
         <option value="8">8 stars</option>
         <option value="9">9 stars</option>
         <option value="10">10 stars</option>
-
       </select>
     </div>
   );

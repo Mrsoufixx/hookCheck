@@ -4,44 +4,59 @@
   place-items: center;
 }
 .container h1 {
-  justify-self: center;
+  margin-top: 2rem;
+  align-self: start;
 }
 .container form {
   background-color: #393e46;
   padding: 20px 30px;
   display: flex;
   flex-direction: column;
-  width: 80%;
-  border-radius: 10px;
+  transition: 1s;
+  width: 50%;
+  border-radius: 5px;
+}
+.container form input, .container form textarea {
+  border-radius: 5px;
+}
+.container form input {
+  height: 25px;
+}
+.container form textarea {
+  height: 50px;
+}
+.container form .btn {
+  margin-top: 25px;
+  display: flex;
+  justify-content: start;
+  gap: 30px;
+}
+.container form .btn button {
+  width: 20%;
+  padding: 7px 10px;
+  border-radius: 5px;
 }
 .container .addBtn {
   margin: 10px;
-  padding: 15px 30px;
-  text-align: center;
+  padding: 30px;
   transition: 0.5s;
-  font-size: 30px;
+  font-size: 50px;
   background-size: 200% auto;
-  color: white;
-  border-radius: 10px;
-  display: block;
+  color: #EEEEEE;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 0px;
-  font-weight: 700;
-  box-shadow: 0px 0px 14px -7px #00adb5;
-  background-image: linear-gradient(45deg, #393e46 0%, #00adb5 51%, #393e46 100%);
+  box-shadow: 0px 0px 10px -7px rgba(0, 172, 181, 0.768627451);
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  touch-action: manipulation;
-  width: 100%;
+  width: 80%;
   height: 40px;
   background-color: #393e46;
 }
 .container .addBtn:hover {
-  background-position: right center;
-  /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
+  background-color: #33373c;
+  color: #c0c0c0;
 }
 .container .addBtn:active {
   transform: scale(0.95);

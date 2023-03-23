@@ -3,7 +3,8 @@
   flex-direction: column;
   place-items: center ;
   h1 {
-    justify-self: center;
+    margin-top: 2rem;
+    align-self: start;
 
   }
   form {
@@ -11,39 +12,52 @@
     padding: 20px 30px;
     display: flex;
     flex-direction: column;
-    width: 80%;
-    border-radius: 10px;
+    transition :  1s;
+    width: 50%;
+    border-radius: 5px;
+    input,textarea{
+      border-radius: 5px ;
+    }
+    input{
+      height: 25px;
+    }
+    textarea{
+      height: 50px;
+    }
+    .btn{
+      margin-top: 25px;
+      display: flex;
+      justify-content: start;
+      gap: 30px;
+      button{
+        width: 20%;
+        padding: 7px 10px;
+        border-radius: 5px;
+      }
+    }
   }
   .addBtn {
+
     margin: 10px;
-    padding: 15px 30px;
-    text-align: center;
+    padding: 30px;
     transition: 0.5s;
-    font-size: 30px;
+    font-size: 50px;
     background-size: 200% auto;
-    color: white;
-    border-radius: 10px;
-    display: block;
+    color: #EEEEEE;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 0px;
-    font-weight: 700;
-    box-shadow: 0px 0px 14px -7px #00adb5;
-    background-image: linear-gradient(
-      45deg,
-      #393e46 0%,
-      #00adb5 51%,
-      #393e46 100%
-    );
+    box-shadow: 0px 0px 10px -7px #00acb5c4;
+    
     cursor: pointer;
-    user-select: none;
-    touch-action: manipulation;
-    width: 100%;
+    width: 80%;
     height: 40px;
     background-color: #393e46;
     &:hover{
-      background-position: right center;
-  /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
+      background-color: #33373c;
+  color: #c0c0c0;
     }
     &:active{
       transform: scale(0.95);
@@ -56,4 +70,60 @@
 }
 
 
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+  .form__field {
+    height: 30px;
+    border-radius: 5px;
+    width: 15%;
+    border: 0;
+    border-bottom: 2px solid #676b71;
+    outline: 0;
+    font-size: 1.3rem;
+    color: $white;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
 
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown ~ .form__label {
+      font-size: 1.3rem;
+      cursor: text;
+      top: 20px;
+    }
+    &:focus {
+      ~ .form__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+        color: $cyan;
+        font-weight: 700;
+      }
+      padding-bottom: 6px;
+      font-weight: 700;
+      border-width: 3px;
+      border-image: linear-gradient(to right, $gray, $cyan);
+      border-image-slice: 1;
+    }
+    &:required,
+    &:invalid {
+      box-shadow: none;
+    }
+  }
+  .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #676b71;
+  }
+}

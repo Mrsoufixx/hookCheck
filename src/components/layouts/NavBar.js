@@ -24,11 +24,11 @@ const NavBar = () => {
           <RiMenu3Fill/>
           </div>
           <div className={`nav-elements  ${showNavbar && 'active'} `}>
-            <ul>
-              <li className='pullDown'>
+            <ul className='pullDown'>
+              <li >
                 <a href='/'>Home</a>
               </li>
-              <li>
+              <li >
               <a href='/'>Categories</a>
               </li>
             </ul>

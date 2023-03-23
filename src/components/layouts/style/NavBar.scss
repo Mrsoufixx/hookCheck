@@ -54,24 +54,6 @@
   display: none;
 }
 
-/* Pull down  */
-li.pullDown a:before
-{
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    left: 0px;
-    top: 0px;
-    content: '';
-    background: #FFF;
-    opacity: 0.3;
-    transition: all 0.3s;
-}
-
-li.pullDown a:hover:before
-{
-    height: 100%;
-}
 
 @media (max-width: 768px) {
   .nav-elements ul li:not(:last-child) {

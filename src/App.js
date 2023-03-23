@@ -4,7 +4,7 @@ import MovieList from "./components/MovieList";
 import Movies from "./components/Movies";
 import "./App.css";
 import NavBar from "./components/layouts/NavBar";
-import {TbSquareRoundedPlus} from "react-icons/tb"
+import { TbSquareRoundedPlus } from "react-icons/tb";
 
 function App() {
   const [movies, setMovies] = useState(Movies);
@@ -46,8 +46,10 @@ function App() {
       <NavBar />
       <div className="container marginLR">
         <h1>Découvrer les meilleurs films sur SoukFilm</h1>
-        <button onClick={() => setShowInputForm(true)} className="addBtn"><TbSquareRoundedPlus/></button>
-        {showInputForm && <MovieInput onAddMovie={AddMovie}/>}
+        <button onClick={() => setShowInputForm(true)} className="addBtn">
+          <TbSquareRoundedPlus />
+        </button>
+        {showInputForm && <MovieInput onAddMovie={AddMovie} />}
         <Filter
           titleFilter={titleFilter}
           ratingFilter={ratingFilter}
@@ -69,45 +71,66 @@ function MovieInput({ onAddMovie }) {
   function handleSubmit(e) {
     e.preventDefault();
     onAddMovie(title, description, posterURL, rating);
-   
   }
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Title:
-        </label>
-        <input
+      <div className="form__group field" >
+        <input 
+        className="form__field"
+        placeholder="Title"
+        name="title"
+        id="title"
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          required
         />
-      
-      <label>
-        Description:
+        <label  class="form__label">Title</label>
+      </div>
+      <div class="form__group field">
+        <input
+          type="text"
+       
+          class="form__field"
+          placeholder="Title"
+          name="title"
+          
+          
+          required
+        />
+        <label htmlFor="title-filter" class="form__label">
+          Title
         </label>
+      </div>
+      <div>
+        <label>Description:</label>
         <textarea
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
-      <label>
-        Poster URL:
-        </label>
+      </div>
+      <div>
+        <label>Poster URL:</label>
         <input
           type="text"
           value={posterURL}
           onChange={(e) => setPosterURL(e.target.value)}
         />
-      <label>
-        Rating:
-        </label>
+      </div>
+      <div>
+        <label>Rating:</label>
         <input
           type="number"
           value={rating}
           onChange={(e) => setRating(e.target.value)}
         />
-      <button type="submit">Add Movie</button>
-    
+      </div>
+
+      <div className="btn">
+        <button type="submit">Add Movie</button>
+        <button>Cancel</button>
+      </div>
     </form>
   );
 }
