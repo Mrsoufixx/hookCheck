@@ -9,21 +9,21 @@
  
   .form__group {
     position: relative;
-    padding: 15px 0 0;
-    margin-top: 10px;
-    width: 50%;
+    padding: 15px 0;
+    
+ 
     .form__field {
       height: 30px;
       border-radius: 5px;
-      width: 15%;
+     width: 80%;
       border: 0;
       border-bottom: 2px solid #676b71;
       outline: 0;
       font-size: 1.3rem;
       color: $white;
-      padding: 7px 0;
+      padding: 2px 0;
       background: transparent;
-      transition: border-color 0.2s;
+      transition: border-color 0.8s;
 
       &::placeholder {
         color: transparent;
@@ -43,12 +43,15 @@
           font-size: 1rem;
           color: $cyan;
           font-weight: 700;
+          
         }
         padding-bottom: 6px;
         font-weight: 700;
         border-width: 3px;
         border-image: linear-gradient(to right, $gray, $cyan);
         border-image-slice: 1;
+    
+
       }
       &:required,
       &:invalid {
@@ -62,11 +65,29 @@
       transition: 0.2s;
       font-size: 1rem;
       color: #676b71;
+      
     }
-    select {
-      height: 30px;
-      border-radius: 5px;
-      width: 8%;
+  }
+  select {
+    height: 30px;
+    border-radius: 5px;
+    background-color: transparent;
+    // width: 60%; 
+    border: 0;
+    border-bottom: 2px solid  #676b71;
+    color: #676b71;
+    font-family: $family;
+    font-size: 1.2rem;
+    margin-top: 8px;
+    // padding: 10px 0;
+   
+    option{
+      font-family: $family;
+      // width: 100%;
+      font-weight: 500;
+      color:$white;
+      background-color: $darkGrey;
+      padding: 15px;
     }
   }
 }

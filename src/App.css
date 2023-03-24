@@ -7,42 +7,20 @@
   margin-top: 2rem;
   align-self: start;
 }
-.container form {
-  background-color: #393e46;
-  padding: 20px 30px;
+.container .addMovie {
   display: flex;
   flex-direction: column;
-  transition: 1s;
-  width: 50%;
-  border-radius: 5px;
+  align-items: center;
+  width: 100%;
 }
-.container form input, .container form textarea {
-  border-radius: 5px;
-}
-.container form input {
-  height: 25px;
-}
-.container form textarea {
-  height: 50px;
-}
-.container form .btn {
-  margin-top: 25px;
-  display: flex;
-  justify-content: start;
-  gap: 30px;
-}
-.container form .btn button {
-  width: 20%;
-  padding: 7px 10px;
-  border-radius: 5px;
-}
-.container .addBtn {
+.container .addMovie .addBtn {
+  width: 100%;
   margin: 10px;
-  padding: 30px;
+  padding: 25px;
   transition: 0.5s;
-  font-size: 50px;
+  font-size: 30px;
   background-size: 200% auto;
-  color: #EEEEEE;
+  color: #eeeeee;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -50,15 +28,14 @@
   border: 0px;
   box-shadow: 0px 0px 10px -7px rgba(0, 172, 181, 0.768627451);
   cursor: pointer;
-  width: 80%;
   height: 40px;
   background-color: #393e46;
 }
-.container .addBtn:hover {
+.container .addMovie .addBtn:hover {
   background-color: #33373c;
   color: #c0c0c0;
 }
-.container .addBtn:active {
+.container .addMovie .addBtn:active {
   transform: scale(0.95);
 }
 

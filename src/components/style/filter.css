@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400;500;600;700&display=swap");
 .filter {
   margin: 5px 0 20px;
   display: flex;
@@ -7,22 +8,20 @@
 }
 .filter .form__group {
   position: relative;
-  padding: 15px 0 0;
-  margin-top: 10px;
-  width: 50%;
+  padding: 15px 0;
 }
 .filter .form__group .form__field {
   height: 30px;
   border-radius: 5px;
-  width: 15%;
+  width: 80%;
   border: 0;
   border-bottom: 2px solid #676b71;
   outline: 0;
   font-size: 1.3rem;
   color: #EEEEEE;
-  padding: 7px 0;
+  padding: 2px 0;
   background: transparent;
-  transition: border-color 0.2s;
+  transition: border-color 0.8s;
 }
 .filter .form__group .form__field::-moz-placeholder {
   color: transparent;
@@ -68,8 +67,21 @@
   font-size: 1rem;
   color: #676b71;
 }
-.filter .form__group select {
+.filter select {
   height: 30px;
   border-radius: 5px;
-  width: 8%;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #676b71;
+  color: #676b71;
+  font-family: "Edu NSW ACT Foundation", cursive;
+  font-size: 1.2rem;
+  margin-top: 8px;
+}
+.filter select option {
+  font-family: "Edu NSW ACT Foundation", cursive;
+  font-weight: 500;
+  color: #EEEEEE;
+  background-color: #222831;
+  padding: 15px;
 }/*# sourceMappingURL=filter.css.map */
