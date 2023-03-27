@@ -11,18 +11,18 @@ function Filter({
     <div className="filter">
       <h2>Filter</h2>
 
-      <div class="form__group field">
+      <div className="form__group field">
         <input
           type="text"
           value={titleFilter}
-          class="form__field"
+          className="form__field"
           placeholder="Title"
           name="title"
           onChange={(e) => onTitleFilterChange(e.target.value)}
           id="title-filter"
           required
         />
-        <label htmlFor="title-filter" class="form__label">
+        <label htmlFor="title-filter" className="form__label">
           Title
         </label>
       </div>

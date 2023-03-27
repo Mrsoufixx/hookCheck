@@ -22,13 +22,37 @@
   justify-content: space-between;
   list-style-type: none;
 }
+.navbar .subNavbar .nav-elements ul li {
+  position: relative;
+  display: block;
+  transition: 0.5s;
+}
 .navbar .subNavbar .nav-elements ul li:not(:last-child) {
   margin-right: 60px;
   width: 20%;
 }
+.navbar .subNavbar .nav-elements ul li::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 3px;
+  top: 100%;
+  left: 0;
+  transition: trasform 0.5s;
+  transform: scale(0);
+  transform-origin: right;
+  color: #222831;
+}
+.navbar .subNavbar .nav-elements ul li:hover {
+  color: #222831;
+}
+.navbar .subNavbar .nav-elements ul li:hover::after {
+  transform: scale(1);
+  transform-origin: left;
+}
 .navbar .subNavbar .nav-elements ul a {
-  font-size: 25px;
-  font-weight: 400;
+  font-size: 22px;
+  font-weight: 600;
   color: #222831;
   text-decoration: none;
 }

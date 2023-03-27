@@ -3,9 +3,11 @@ import "./style/movieCard.css";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { FaPlay } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function MovieCard({ movie }) {
   return (
+      <Link to={`/movie/${movie.title}`}>
     <div className="flexCol">
       <figure>
         <img src={movie.posterURL} alt={movie.title} />
@@ -44,6 +46,7 @@ function MovieCard({ movie }) {
       </figure>
       <h2>{movie.title}</h2>
     </div>
+    </Link>
   );
 }
 

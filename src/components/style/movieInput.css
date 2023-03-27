@@ -7,11 +7,14 @@ form {
 form .gridInput {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: "title description " "poster description " "rating description " "btn btn ";
-  place-items: stretch stretch;
+  grid-template-areas: "title description " "poster description " "trailer description " "rating description " "btn btn ";
   gap: 20px;
   transition: 1s;
   margin: 20px;
+}
+form .gridInput div {
+  display: flex;
+  flex-direction: column;
 }
 form .gridInput .description {
   grid-area: description;
@@ -30,6 +33,9 @@ form .gridInput .poster {
 }
 form .gridInput .rating {
   grid-area: rating;
+}
+form .gridInput .trailer {
+  grid-area: trailer;
 }
 form .gridInput .btn {
   grid-area: btn;

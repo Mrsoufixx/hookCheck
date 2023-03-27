@@ -11,14 +11,18 @@ form{
     grid-template-areas:
       "title description "
       "poster description "
+      "trailer description "
       "rating description "
       "btn btn ";
-      
-    place-items: stretch stretch;
     gap: 20px;
     transition: 1s;
     
     margin: 20px;
+    div{
+      display: flex;
+      flex-direction: column;
+      
+    }
     .description {
       grid-area: description;
       width: 100%;
@@ -37,6 +41,9 @@ form{
     }
     .rating {
       grid-area: rating;
+    }
+    .trailer {
+      grid-area: trailer;
     }
     .btn {
       grid-area: btn;
