@@ -41,6 +41,7 @@ form .gridInput .btn {
   grid-area: btn;
   margin-top: 25px;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   gap: 30px;
 }

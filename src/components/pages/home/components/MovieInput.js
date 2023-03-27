@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./style/movieInput.css";
+import "../style/movieInput.css";
 
 function MovieInput({ onAddMovie, onCancel }) {
   const [title, setTitle] = useState("");

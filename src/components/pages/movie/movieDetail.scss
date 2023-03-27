@@ -1,0 +1,21 @@
+.details {
+  display: grid;
+  grid-template-areas:
+    "poster poster title title title"
+    "poster poster annee type heure"
+    "poster poster trailer watchlist share"
+    "poster poster description description description"
+    "poster poster description description description"
+    ;
+  grid-template-columns: auto;
+  gap: 10rem;
+  .poster {
+    grid-area: poster;
+  }
+  .title {
+    grid-area: title;
+  }
+  .description {
+    grid-area: description;
+  }
+}

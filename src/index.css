@@ -6,6 +6,11 @@ body {
   font-family: "Edu NSW ACT Foundation", cursive;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #root {
   display: flex;
   flex-direction: column;

@@ -1,9 +1,9 @@
-import MovieList from "../MovieList";
+import MovieList from "./components/MovieList";
 import React, { useState } from "react";
-import Filter from "../Filter";
-import Movies from "../Movies";
-import MovieInput from "../MovieInput";
-import "../../App.css";
+import Filter from "./components/Filter";
+import Movies from "../../../data/Movies";
+import MovieInput from "./components/MovieInput";
+import "../../../App.css";
 import { TbSquareRoundedPlus } from "react-icons/tb";
 
 function Home() {

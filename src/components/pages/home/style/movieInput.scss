@@ -1,5 +1,5 @@
-@import "./variables";
-@import "./mixin";
+@import "../../../style/variables";
+@import "../../../style/mixin";
 form{
   width: 100%;
   background-color: #393e46;
@@ -49,6 +49,7 @@ form{
       grid-area: btn;
       margin-top: 25px;
       display: flex;
+      flex-direction: row;
       justify-content: space-around;
       gap: 30px;
       
@@ -93,7 +94,5 @@ input[type="number"]{
       "description "
       "btn  ";
   }
-  .btn{
-    
-  }
+
 }

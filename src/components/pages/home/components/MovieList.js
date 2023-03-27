@@ -1,6 +1,6 @@
 import React from "react";
 import MovieCard from "./MovieCard";
-import "./style/movieList.css";
+import "../style/movieList.css";
 
 function MovieList({ movies }) {
   

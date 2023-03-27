@@ -11,6 +11,7 @@
   padding: 15px 0;
 }
 .filter .form__group .form__field {
+  font-family: "Edu NSW ACT Foundation", cursive;
   height: 30px;
   border-radius: 5px;
   width: 80%;

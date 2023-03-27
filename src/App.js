@@ -1,9 +1,9 @@
-import Home from "./components/pages/Home";
+import Home from "./components/pages/home/Home";
 import NavBar from "./components/layouts/NavBar";
-import Categorie from "./components/pages/Categorie";
+import Categorie from "./components/pages/categories/Categorie";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import MovieDetail from "./components/pages/MovieDetail";
+import MovieDetail from "./components/pages//movie/MovieDetail";
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
           <Route index path="/" element={<Home />} />
           <Route path="/categorie" element={<Categorie />} />
           <Route path="/movie/:title" element={<MovieDetail/>} />
+            
         </Routes>
       </BrowserRouter>
     </>

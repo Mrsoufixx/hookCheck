@@ -1,0 +1,15 @@
+.details {
+  display: grid;
+  grid-template-areas: "poster poster title title title" "poster poster annee type heure" "poster poster trailer watchlist share" "poster poster description description description" "poster poster description description description";
+  grid-template-columns: auto;
+  gap: 10rem;
+}
+.details .poster {
+  grid-area: poster;
+}
+.details .title {
+  grid-area: title;
+}
+.details .description {
+  grid-area: description;
+}/*# sourceMappingURL=movieDetail.css.map */
