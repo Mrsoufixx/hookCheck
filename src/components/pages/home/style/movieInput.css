@@ -1,14 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400;500;600;700&display=swap");
+.overlay {
+  background-color: rgba(75, 80, 87, 0.6509803922);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #393E46;
+  border: 1px solid #393E46;
+  border-radius: 8px;
+  z-index: 9999;
+  width: 70%;
+  box-shadow: 1px 3px 20px 3px #2a2f36;
+}
+
 form {
   width: 100%;
-  background-color: #393e46;
-  border-radius: 5px;
 }
 form .gridInput {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: "title description " "poster description " "trailer description " "rating description " "btn btn ";
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "movieIcon movieIcon " "title description " "poster description " "rating  trailer" "btn btn ";
+  -moz-column-gap: 40px;
+       column-gap: 40px;
   transition: 1s;
   margin: 20px;
 }
@@ -16,8 +39,20 @@ form .gridInput div {
   display: flex;
   flex-direction: column;
 }
+form .gridInput div label {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+form .gridInput .movieIcon {
+  grid-area: movieIcon;
+  width: 20%;
+  place-self: center;
+  grid-column: 2;
+  fill: #00ADB5;
+}
 form .gridInput .description {
   grid-area: description;
+  grid-column: span 2;
   width: 100%;
 }
 form .gridInput .description textarea {
@@ -42,8 +77,10 @@ form .gridInput .btn {
   margin-top: 25px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  gap: 30px;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px 18px;
+  grid-column: span 3;
 }
 form .gridInput .btn button {
   background-color: #222831;
@@ -54,13 +91,20 @@ form .gridInput .btn button {
   font-family: "Edu NSW ACT Foundation", cursive;
   font-size: 20px;
 }
+@media only screen and (max-width: 37.5em) {
+  form .gridInput .btn {
+    grid-template-columns: 1fr;
+    grid-template-areas: "title  " "poster  " "rating  " "description " "btn  ";
+  }
+}
 form textarea,
 form input[type=text], form input[type=number] {
   border-radius: 5px;
   background-color: transparent;
   color: #EEEEEE;
   font-family: "Edu NSW ACT Foundation", cursive;
-  font-size: 20px;
+  padding: 8px;
+  font-size: 16px;
 }
 form input[type=text], form input[type=number] {
   width: 100%;
@@ -69,11 +113,4 @@ form input[type=text], form input[type=number] {
 }
 form input[type=number] {
   width: 30%;
-}
-
-@media only screen and (max-width: 37.5em) {
-  .gridInput {
-    grid-template-columns: 1fr;
-    grid-template-areas: "title  " "poster  " "rating  " "description " "btn  ";
-  }
 }/*# sourceMappingURL=movieInput.css.map */

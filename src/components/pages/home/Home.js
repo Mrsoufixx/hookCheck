@@ -1,16 +1,17 @@
+import { useState } from "react";
 import MovieList from "./components/MovieList";
-import React, { useState } from "react";
 import Filter from "./components/Filter";
 import Movies from "../../../data/Movies";
 import MovieInput from "./components/MovieInput";
 import "../../../App.css";
 import { TbSquareRoundedPlus } from "react-icons/tb";
+import Modal from "react-modal";
 
 function Home() {
   const [movies, setMovies] = useState(Movies);
   const [titleFilter, setTitleFilter] = useState("");
   const [ratingFilter, setRatingFilter] = useState("");
-  const [showInputForm, setShowInputForm] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   function handleTitleFilterChange(value) {
     setTitleFilter(value);
@@ -26,13 +27,13 @@ function Home() {
       description,
       trailer,
       posterURL,
-      rating:Number(rating),
+      rating: Number(rating),
     };
     setMovies([...movies, newMovie]);
-    setShowInputForm(false);
+    setShowModal(false);
   }
   function handleCancel() {
-    setShowInputForm(false);
+    setShowModal(false);
   }
 
   let filteredMovies = movies.filter((movie) =>
@@ -43,17 +44,24 @@ function Home() {
       (movie) => movie.rating === Number(ratingFilter)
     );
   }
+
   return (
     <>
       <div className="container marginLR">
         <h1>Découvrer les meilleurs films sur SoukFilm</h1>
         <div className="addMovie">
-          <button onClick={() => setShowInputForm(true)} className="addBtn">
+          <button onClick={() => setShowModal(true)} className="addBtn">
             <TbSquareRoundedPlus />
           </button>
-          {showInputForm && (
+          <Modal
+            isOpen={showModal}
+            onRequestClose={() => setShowModal(false)}
+            contentLabel="Add Movie Modal"
+            className="modal"
+            overlayClassName="overlay"
+          >
             <MovieInput onAddMovie={AddMovie} onCancel={handleCancel} />
-          )}
+          </Modal>
         </div>
 
         <Filter

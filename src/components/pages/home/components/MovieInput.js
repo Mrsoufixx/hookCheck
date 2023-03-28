@@ -1,4 +1,5 @@
 import { useState } from "react";
+import movieIcon from "./../../../assets/addMovieIcon.svg"
 import "../style/movieInput.css";
 
 function MovieInput({ onAddMovie, onCancel }) {
@@ -10,8 +11,15 @@ function MovieInput({ onAddMovie, onCancel }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    onAddMovie(title, description, posterURL, rating);
+    onAddMovie(title, description, posterURL, rating, trailer);
+    setTitle("");
+    setDescription("");
+    setPosterURL("");
+    setRating("");
+    setTrailer("");
+    
   }
+
   function handleCancel(e) {
     e.preventDefault();
     onCancel();
@@ -19,72 +27,78 @@ function MovieInput({ onAddMovie, onCancel }) {
     setDescription("");
     setPosterURL("");
     setRating("");
+    setTrailer("");
+    
   }
+
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="gridInput">
-        <div className="description">
-          <label>Description</label>
-          <textarea
-            placeholder="ici la description du film"
-            type="text"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            required
-          ></textarea>
-        </div>
-        <div className="title">
-          <label >Title</label>
-          <input
-            className=""
-            placeholder="Title"
-            name="title"
-            id="title"
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            required
-          />
-        </div>
+    
+      <form onSubmit={handleSubmit}>
+        <div className="gridInput">
+          <div className="movieIcon"><img src={movieIcon} alt="icon" /></div>
+          <div className="description">
+            <label>Description</label>
+            <textarea
+              placeholder="ici la description du film"
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+            ></textarea>
+          </div>
+          <div className="title">
+            <label>Title</label>
+            <input
+              className=""
+              placeholder="Title"
+              name="title"
+              id="title"
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              required
+            />
+          </div>
 
-        <div className="poster">
-          <label>Poster URL</label>
-          <input
-            placeholder="Poster URL"
-            type="text"
-            value={posterURL}
-            onChange={(e) => setPosterURL(e.target.value)}
-            required
-          />
-        </div>
-        <div className="trailer">
-          <label>Trailer link</label>
-          <input
-            placeholder="Poster URL"
-            type="text"
-            value={trailer}
-            onChange={(e) => setTrailer(e.target.value)}
-            required
-          />
-        </div>
+          <div className="poster">
+            <label>Poster URL</label>
+            <input
+              placeholder="Poster URL"
+              type="text"
+              value={posterURL}
+              onChange={(e) => setPosterURL(e.target.value)}
+              required
+            />
+          </div>
+          <div className="trailer">
+            <label>Trailer link</label>
+            <input
+              placeholder="trailer URL embed"
+              type="text"
+              value={trailer}
+              onChange={(e) => setTrailer(e.target.value)}
+              required
+            />
+          </div>
 
-        <div className="rating">
-          <label>Rating</label>
-          <input
-            placeholder="Rating"
-            type="number"
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
-            required
-          />
-        </div>
+          <div className="rating">
+            <label>Rating</label>
+            <input
+              placeholder="Rating"
+              type="number"
+              value={rating}
+              onChange={(e) => setRating(e.target.value)}
+              required
+            />
+          </div>
 
-        <div className="btn">
-          <button type="submit">Add Movie</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <div className="btn">
+            <button type="submit">Add Movie</button>
+            <button onClick={handleCancel}>Cancel</button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+ 
   );
 }
 
