@@ -52,12 +52,12 @@ function MovieDetail() {
         <Modal
           isOpen={isOpenModal}
           onRequestClose={closeModal}
-          className="modal"
-          overlayClassName="overlay"
+          className="modalIframe"
+          overlayClassName="overlayIframe"
         >
-          {console.log(movie.trailer.src)}
 
-          <div><iframe width="924" height="520" src={movie.trailer.src} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <div className="trailerIframe">
+            <iframe  src={movie.trailer.src} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </Modal>
       </div>

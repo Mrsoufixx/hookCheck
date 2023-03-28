@@ -66,4 +66,38 @@
 }
 .movieDetail .details .propDetail .btnDetail .watchList, .movieDetail .details .propDetail .btnDetail .share {
   background-color: #393E46;
+}
+
+.trailerIframe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.trailerIframe iframe {
+  width: 100%;
+  height: 520px;
+  box-shadow: 2px 4px 30px 4px #18181a;
+  border-radius: 5px;
+}
+
+.overlayIframe {
+  background-color: rgba(32, 33, 36, 0.6509803922);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modalIframe {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  z-index: 9999;
+  width: 70%;
 }/*# sourceMappingURL=movieDetail.css.map */
