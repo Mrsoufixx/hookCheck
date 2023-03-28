@@ -48,12 +48,13 @@ function Home() {
     setShowModal(false);
   }
   const callback=JSON.parse(localStorage.getItem("movies") || ([]))
+  
   let filteredMovies = callback.filter((movie) =>
     movie.title.toLowerCase().includes(titleFilter.toLowerCase())
   );
   if (ratingFilter) {
     filteredMovies = filteredMovies.filter(
-      (movie) => movie.rating === Number(ratingFilter)
+      (movie) => movie.rating >= Number(ratingFilter)
     );
   }
 
