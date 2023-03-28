@@ -16,6 +16,7 @@
 }
 .movieDetail .details .poster img {
   border-radius: 8px;
+  max-width: 300px;
 }
 .movieDetail .details .propDetail {
   display: grid;

@@ -101,7 +101,7 @@ form fieldset .gridInput .btn {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 40px;
   padding: 10px 18px;
   grid-column: span 3;
 }
