@@ -1,5 +1,6 @@
 import React from "react";
 import "../style/filter.css";
+import { FaStar } from "react-icons/fa"
 
 function Filter({
   titleFilter,
@@ -31,12 +32,14 @@ function Filter({
         value={ratingFilter}
         onChange={(e) => onRatingFilterChange(e.target.value)}
       >
-        <option value="">Choose Rate</option>
+        <option value="" hidden>Choose Rate </option>
+
+        <option value="">All </option>
         <option value="1">1 ⭐</option>
-        <option value="2">2 ⭐⭐</option>
-        <option value="3">3 ⭐⭐⭐</option>
-        <option value="4">4 ⭐⭐⭐⭐</option>
-        <option value="5">5 ⭐⭐⭐⭐⭐</option>
+        <option value="2">2 ⭐</option>
+        <option value="3">3 ⭐</option>
+        <option value="4">4 ⭐</option>
+        <option value="5">5 ⭐</option>
       </select>
       
     </div>

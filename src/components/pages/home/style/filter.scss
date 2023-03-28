@@ -89,6 +89,10 @@
       color:$white;
       background-color: $darkGrey;
       padding: 15px;
+      .starIcon{
+        color: $cyan;
+        z-index: 100;
+      }
     }
   }
 }

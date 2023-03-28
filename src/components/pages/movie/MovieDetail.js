@@ -18,7 +18,7 @@ function MovieDetail() {
   }
 
   const { title } = useParams();
-  console.table(title);
+
   const movie = Movies.find((movie) => movie.title === title);
   return (
     <>
@@ -42,7 +42,7 @@ function MovieDetail() {
               <button className="watch" onClick={openModal}>
                 Watch Trailer
               </button>
-              <button className="watchList">Add to Watchlist</button>
+              <button className="watchList">Add to Watchlist </button>
               <button className="share">Share</button>
             </div>
           </div>

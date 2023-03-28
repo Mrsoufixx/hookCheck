@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400;500;600;700&display=swap");
 .overlay {
-  background-color: rgba(75, 80, 87, 0.6509803922);
+  background-color: rgba(32, 33, 36, 0.6509803922);
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
   position: fixed;
@@ -20,59 +20,82 @@
   border-radius: 8px;
   z-index: 9999;
   width: 70%;
-  box-shadow: 1px 3px 20px 3px #2a2f36;
+  box-shadow: 1px 3px 20px 3px #1f2022;
 }
 
 form {
-  width: 100%;
+  position: relative;
+  width: 95%;
+  padding: 20px;
 }
-form .gridInput {
+form .movieIcon {
+  display: block;
+  text-align: center;
+  width: 100%;
+  fill: #00ADB5;
+  margin-bottom: 10px;
+}
+form .movieIcon img {
+  width: 11%;
+}
+form fieldset {
+  width: 100%;
+  position: relative;
+  border-radius: 8px;
+  border: 2px solid #EEEEEE;
+}
+form fieldset legend {
+  font-size: 20px;
+  margin-right: 40px;
+  padding: 0px 10px;
+  text-align: right;
+}
+form fieldset .gridInput {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-areas: "movieIcon movieIcon " "title description " "poster description " "rating  trailer" "btn btn ";
+  grid-template-areas: "title description " "poster description " "rating  trailer" "btn btn ";
   -moz-column-gap: 40px;
        column-gap: 40px;
   transition: 1s;
   margin: 20px;
 }
-form .gridInput div {
+form fieldset .gridInput div {
   display: flex;
   flex-direction: column;
 }
-form .gridInput div label {
+form fieldset .gridInput div label {
   font-size: 20px;
-  margin-bottom: 8px;
+  margin-bottom: 2px;
 }
-form .gridInput .movieIcon {
-  grid-area: movieIcon;
-  width: 20%;
-  place-self: center;
-  grid-column: 2;
-  fill: #00ADB5;
-}
-form .gridInput .description {
+form fieldset .gridInput .description {
   grid-area: description;
   grid-column: span 2;
-  width: 100%;
+  width: 95%;
 }
-form .gridInput .description textarea {
+form fieldset .gridInput .description textarea {
   width: 100%;
-  height: 90%;
+  height: 60%;
   resize: vertical;
 }
-form .gridInput .title {
+form fieldset .gridInput .title {
   grid-area: title;
 }
-form .gridInput .poster {
+form fieldset .gridInput .poster {
   grid-area: poster;
 }
-form .gridInput .rating {
+form fieldset .gridInput .rating {
   grid-area: rating;
 }
-form .gridInput .trailer {
+form fieldset .gridInput .trailer {
   grid-area: trailer;
+  width: 95%;
+  grid-column: span 2;
 }
-form .gridInput .btn {
+form fieldset .gridInput .trailer textarea {
+  width: 100%;
+  resize: vertical;
+}
+form fieldset .gridInput .btn {
   grid-area: btn;
   margin-top: 25px;
   display: flex;
@@ -82,35 +105,58 @@ form .gridInput .btn {
   padding: 10px 18px;
   grid-column: span 3;
 }
-form .gridInput .btn button {
-  background-color: #222831;
+form fieldset .gridInput .btn button {
   width: 20%;
   padding: 7px 10px;
   border-radius: 5px;
-  color: #EEEEEE;
-  font-family: "Edu NSW ACT Foundation", cursive;
   font-size: 20px;
+  font-weight: 500;
+  font-family: "Edu NSW ACT Foundation", cursive;
+  border: none;
+  cursor: pointer;
+}
+form fieldset .gridInput .btn button:first-child {
+  background-color: #00ADB5;
+  color: #EEEEEE;
+}
+form fieldset .gridInput .btn button:first-child:hover {
+  background-color: #047e85;
+}
+form fieldset .gridInput .btn button:first-child:active {
+  background-color: #058d94;
+}
+form fieldset .gridInput .btn button:last-child {
+  background-color: #EEEEEE;
+  color: #222831;
+}
+form fieldset .gridInput .btn button:last-child:hover {
+  background-color: #a3a3a3;
+}
+form fieldset .gridInput .btn button:last-child:active {
+  background-color: #393E46;
+  color: #EEEEEE;
 }
 @media only screen and (max-width: 37.5em) {
-  form .gridInput .btn {
+  form fieldset .gridInput .btn {
     grid-template-columns: 1fr;
     grid-template-areas: "title  " "poster  " "rating  " "description " "btn  ";
   }
 }
-form textarea,
-form input[type=text], form input[type=number] {
+form fieldset textarea,
+form fieldset input[type=text], form fieldset input[type=number] {
   border-radius: 5px;
+  margin-bottom: 15px;
   background-color: transparent;
   color: #EEEEEE;
   font-family: "Edu NSW ACT Foundation", cursive;
   padding: 8px;
   font-size: 16px;
 }
-form input[type=text], form input[type=number] {
+form fieldset input[type=text], form fieldset input[type=number] {
   width: 100%;
   border: 0;
   border-bottom: 2px solid #676b71;
 }
-form input[type=number] {
+form fieldset input[type=number] {
   width: 30%;
 }/*# sourceMappingURL=movieInput.css.map */

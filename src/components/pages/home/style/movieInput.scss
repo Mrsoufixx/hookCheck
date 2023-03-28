@@ -4,7 +4,7 @@
 
 
 .overlay{
-  background-color: #4b5057a6;
+  background-color: #202124a6;
   backdrop-filter: blur(3px);
   position: fixed;
     top: 0;
@@ -22,18 +22,43 @@
   border-radius: 8px;
   z-index: 9999;
   width: 70%;
-  box-shadow: 1px 3px 20px 3px #2a2f36 ;
+  box-shadow: 1px 3px 20px 3px #1f2022 ;
 }
+
 form{
-  width: 100%;
-  // background-color: #393e46;
-  // border-radius: 5px;
-  .gridInput {
+  position: relative;
+  width: 95%;
+  padding: 20px;
+    // background-color: #393e46;
+    // border-radius: 5px;
+    .movieIcon{
+      display: block;
+      text-align: center;
+      width: 100%;
+      fill:$cyan;
+      margin-bottom: 10px;
+      img{
+        width: 11%;
+      }
+    }
+  fieldset{
+    width: 100%;
+    position: relative;
+    border-radius: 8px;
+    border: 2px solid $white;
+    legend{
+      font-size: 20px;
+margin-right: 40px;
+padding: 0px 10px;
+text-align: right;
+    }
+    
+    .gridInput {
     
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
-      "movieIcon movieIcon "
+      
       "title description "
       "poster description "
       "rating  trailer"
@@ -46,24 +71,19 @@ form{
       flex-direction: column;
       label{
         font-size: 20px;
-        margin-bottom: 8px;
+        margin-bottom: 2px;
       }
       
     }
-    .movieIcon{
-      grid-area: movieIcon;
-      width: 20%;
-      place-self: center;
-      grid-column: 2;
-      fill:$cyan;
-    }
+    
     .description {
       grid-area: description;
       grid-column: span 2;
-      width: 100%;
+      width: 95%;
+     
       textarea{
         width: 100%;
-        height: 90%;
+        height: 60%;
         resize:vertical
       }
     }
@@ -79,6 +99,12 @@ form{
     }
     .trailer {
       grid-area: trailer;
+      width: 95%;
+      grid-column: span 2;
+      textarea{
+        width: 100%;
+        resize:vertical
+      }
     }
     .btn {
       grid-area: btn;
@@ -92,14 +118,37 @@ form{
       
 
       button {
-        background-color: $darkGrey;
         width: 20%;
         padding: 7px 10px;
         border-radius: 5px;
-        color: $white;
-        font-family: $family;
         font-size: 20px;
+        font-weight: 500;
+        font-family: $family;
+        border: none;
+        cursor: pointer;
+        &:first-child{
+          background-color: $cyan;
+          color:$white;
+          &:hover{
+            background-color: $cyanHover;
+          }
+          &:active{
+            background-color: $cyanActive;
+          }
+        }
+        &:last-child{
+          background-color: $white;
+          color: $darkGrey;
+          &:hover{
+            background-color: $whiteHover;
+          }
+          &:active{
+            background-color: $gray;
+            color: $white;
+          }
+        }
       }
+      
       @include screen(sm){
   
         grid-template-columns: 1fr;
@@ -109,8 +158,6 @@ form{
           "rating  "
           "description "
           "btn  ";
-      
-    
     }
     }
   }
@@ -118,12 +165,13 @@ form{
   textarea,
 input[type="text"],input[type="number"] {
     border-radius: 5px;
+    margin-bottom: 15px;
     background-color: transparent;
     color: $white;
     font-family: $family;
     padding: 8px ;
     font-size: 16px;
-}
+  }
 input[type="text"],input[type="number"]{
   width: 100%;
   border:0;
@@ -132,6 +180,7 @@ input[type="text"],input[type="number"]{
 }
 input[type="number"]{
   width: 30%;
+}
 }
 }
 

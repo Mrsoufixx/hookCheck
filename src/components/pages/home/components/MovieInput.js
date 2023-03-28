@@ -34,12 +34,16 @@ function MovieInput({ onAddMovie, onCancel }) {
   return (
     
       <form onSubmit={handleSubmit}>
+        <div className="movieIcon"><img src={movieIcon} alt="icon" /></div>
+        <fieldset>
+          <legend>Add Movie Info</legend>
         <div className="gridInput">
-          <div className="movieIcon"><img src={movieIcon} alt="icon" /></div>
+          
+          
           <div className="description">
             <label>Description</label>
             <textarea
-              placeholder="ici la description du film"
+              placeholder=" Ecrire ici la description du film"
               type="text"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -72,13 +76,12 @@ function MovieInput({ onAddMovie, onCancel }) {
           </div>
           <div className="trailer">
             <label>Trailer link</label>
-            <input
-              placeholder="trailer URL embed"
-              type="text"
+            <textarea
+              placeholder="Coller ici embed video"
               value={trailer}
               onChange={(e) => setTrailer(e.target.value)}
               required
-            />
+            ></textarea>
           </div>
 
           <div className="rating">
@@ -93,10 +96,11 @@ function MovieInput({ onAddMovie, onCancel }) {
           </div>
 
           <div className="btn">
-            <button type="submit">Add Movie</button>
+            <button type="submit" >Add Movie</button>
             <button onClick={handleCancel}>Cancel</button>
           </div>
         </div>
+        </fieldset>
       </form>
  
   );

@@ -85,4 +85,8 @@
   color: #EEEEEE;
   background-color: #222831;
   padding: 15px;
+}
+.filter select option .starIcon {
+  color: #00ADB5;
+  z-index: 100;
 }/*# sourceMappingURL=filter.css.map */

@@ -7,11 +7,18 @@ import "../../../App.css";
 import { TbSquareRoundedPlus } from "react-icons/tb";
 import Modal from "react-modal";
 
+const store =localStorage.getItem("movies")
+if(!store || JSON.stringify(Movies).length>JSON.stringify(store).length){
+  localStorage.setItem("movies",JSON.stringify(Movies))
+}
+
 function Home() {
   const [movies, setMovies] = useState(Movies);
   const [titleFilter, setTitleFilter] = useState("");
   const [ratingFilter, setRatingFilter] = useState("");
   const [showModal, setShowModal] = useState(false);
+
+
 
   function handleTitleFilterChange(value) {
     setTitleFilter(value);
@@ -29,14 +36,19 @@ function Home() {
       posterURL,
       rating: Number(rating),
     };
-    setMovies([...movies, newMovie]);
+    setMovies([...movies, newMovie])
+
+      const store = JSON.stringify([...movies, newMovie])
+      localStorage.setItem("movies",store)
+    
+
     setShowModal(false);
   }
   function handleCancel() {
     setShowModal(false);
   }
-
-  let filteredMovies = movies.filter((movie) =>
+  const callback=JSON.parse(localStorage.getItem("movies") || ([]))
+  let filteredMovies = callback.filter((movie) =>
     movie.title.toLowerCase().includes(titleFilter.toLowerCase())
   );
   if (ratingFilter) {
