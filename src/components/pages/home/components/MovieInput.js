@@ -78,8 +78,8 @@ function MovieInput({ onAddMovie, onCancel }) {
             <label>Trailer link</label>
             <textarea
               placeholder="Coller ici embed video"
-              value={trailer}
-              onChange={(e) => setTrailer(e.target.value)}
+              value={trailer.src}
+              onChange={(e) => setTrailer({src : e.target.value.substring(e.target.value.indexOf('https://'),e.target.value.indexOf('" title'))})}
               required
             ></textarea>
           </div>

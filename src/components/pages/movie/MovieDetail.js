@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import Movies from "../../../data/Movies";
+
+
 import "./movieDetail.css";
 import { IoIosArrowDropleftCircle } from "react-icons/io";
 import Modal from "react-modal";
@@ -8,6 +9,7 @@ import Modal from "react-modal";
 Modal.setAppElement('#root');
 
 function MovieDetail() {
+  const store = JSON.parse(localStorage.getItem("movies"))
   const [isOpenModal, setIsOpenModal] = useState(false);
   function openModal() {
     setIsOpenModal(true);
@@ -19,7 +21,7 @@ function MovieDetail() {
 
   const { title } = useParams();
 
-  const movie = Movies.find((movie) => movie.title === title);
+  const movie = store.find((movie) => movie.title === title);
   return (
     <>
       <div className="movieDetail marginLR">
@@ -53,7 +55,10 @@ function MovieDetail() {
           className="modal"
           overlayClassName="overlay"
         >
-          <div>{movie.trailer}</div>
+          {console.log(movie.trailer.src)}
+
+          <div><iframe width="924" height="520" src={movie.trailer.src} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
         </Modal>
       </div>
     </>
